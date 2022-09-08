@@ -7,30 +7,44 @@ const cell = document.createElement('div');
 const small = document.querySelector('.small');
 const medium = document.querySelector('.medium');
 const big = document.querySelector('.big');
+const btnRed = document.querySelector('.btn-red');
+let html = '';
 
-small.addEventListener('click', function () {
-  const html = `<div class="cell" style="width: ${90 / 20}vh; height:  ${
-    90 / 20
+const reset = function () {
+  grid.textContent = '';
+};
+
+const formatHtml = function (cells) {
+  html = `<div class="cell" style="width: ${90 / cells}vh; height:  ${
+    90 / cells
   }vh;"></div>`;
-  for (let i = 0; i < 20 * 20; i++) {
+  for (let i = 0; i < cells * cells; i++) {
     grid.insertAdjacentHTML('afterbegin', html);
   }
+};
+
+small.addEventListener('click', function () {
+  reset();
+  formatHtml(20);
 });
 
 medium.addEventListener('click', function () {
-  const html = `<div class="cell" style="width: ${90 / 40}vh; height:  ${
-    90 / 40
-  }vh;"></div>`;
-  for (let i = 0; i < 40 * 40; i++) {
-    grid.insertAdjacentHTML('afterbegin', html);
-  }
+  reset();
+  formatHtml(40);
 });
 
 big.addEventListener('click', function () {
-  const html = `<div class="cell" style="width: ${90 / 60}vh; height:  ${
-    90 / 60
-  }vh;"></div>`;
-  for (let i = 0; i < 60 * 60; i++) {
-    grid.insertAdjacentHTML('afterbegin', html);
-  }
+  reset();
+  formatHtml(60);
+});
+
+btnRed.addEventListener('click', function () {
+  console.log('click btnRed');
+  // const cells = document.querySelectorAll('.cell');
+  // cells.forEach(cell => cell.addEventListener('click'), function() {
+  //   cell.classList.add('red');
+  // })}
+  cell.addEventListener('click', function() {
+    console.log('click cell');
+  })
 });
