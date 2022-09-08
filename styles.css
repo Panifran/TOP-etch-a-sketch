@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #78CCCB;
+  overflow: scroll;
+  
+}
+
+.container {
+  width: 75vw;
+  height: 100vh;
+  background-color: #FF5E5B;
+}
+
+.grid {
+  width: 90vh;
+  height: 90vh;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.reset {
+  width: 0px;
+  height: 0px;
+}
